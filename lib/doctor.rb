@@ -1,3 +1,5 @@
+require 'pry'
+
 class Doctor
 
     def self.all
@@ -18,10 +20,11 @@ class Doctor
     end 
 
     def new_appointment(patient, date)
-        Appointment.new(patient,date,self)
+        Appointment.new(date,patient,self)
     end 
  
     def patients
+        #binding.pry
         appointments.map {|apt| apt.patient}
       end
 end 
